@@ -8,6 +8,12 @@ import io
 
 app = FastAPI(title="AI Resume Screening API")
 
+app = FastAPI()
+
+@app.get("/health")   
+def health():
+    return {"status": "ok"}
+
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
